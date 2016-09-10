@@ -1,0 +1,66 @@
+Opened connection at 10/09/2016 20:23:51 +03:00
+
+
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.Chains','dbo.Stores','dbo.Items')
+    OR t.TABLE_NAME = 'EdmMetadata'
+
+
+-- Executing at 10/09/2016 20:23:51 +03:00
+
+-- Completed in 1745 ms with result: 3
+
+
+
+Closed connection at 10/09/2016 20:23:53 +03:00
+
+Opened connection at 10/09/2016 20:23:53 +03:00
+
+SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+
+
+-- p__linq__0: 'GroceryValue.Library.Context' (Type = String, Size = 4000)
+
+-- Executing at 10/09/2016 20:23:53 +03:00
+
+-- Completed in 276 ms with result: SqlDataReader
+
+
+
+Closed connection at 10/09/2016 20:23:53 +03:00
+
+Opened connection at 10/09/2016 20:23:53 +03:00
+
+SELECT TOP (1) 
+    [Project1].[C1] AS [C1], 
+    [Project1].[MigrationId] AS [MigrationId], 
+    [Project1].[Model] AS [Model], 
+    [Project1].[ProductVersion] AS [ProductVersion]
+    FROM ( SELECT 
+        [Extent1].[MigrationId] AS [MigrationId], 
+        [Extent1].[Model] AS [Model], 
+        [Extent1].[ProductVersion] AS [ProductVersion], 
+        1 AS [C1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [Project1]
+    ORDER BY [Project1].[MigrationId] DESC
+
+
+-- p__linq__0: 'GroceryValue.Library.Context' (Type = String, Size = 4000)
+
+-- Executing at 10/09/2016 20:23:53 +03:00
+
+-- Completed in 2 ms with result: SqlDataReader
+
+
+
+Closed connection at 10/09/2016 20:23:54 +03:00
+

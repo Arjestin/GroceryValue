@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false">
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GroceryValue.Library" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetChains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChains" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetChains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedChains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedChains" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedChains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedChainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetStores_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStores" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetStores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedStores_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedStores" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedStores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGroceries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroceries" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGroceries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroceriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedGroceries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedGroceries" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSortedGroceries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSortedGroceriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPriceLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceLists" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPriceLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMostExpensiveItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostExpensiveItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMostExpensiveItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostExpensiveItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMostInexpensiveItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostInexpensiveItems" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMostInexpensiveItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMostInexpensiveItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadItemsToDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadItemsToDatabase" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadItemsToDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadItemsToDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetChains">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetChains" message="tns:IService_GetChains_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetChainsResponse" message="tns:IService_GetChains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedChains">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSortedChains" message="tns:IService_GetSortedChains_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSortedChainsResponse" message="tns:IService_GetSortedChains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetStores" message="tns:IService_GetStores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetStoresResponse" message="tns:IService_GetStores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedStores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSortedStores" message="tns:IService_GetSortedStores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSortedStoresResponse" message="tns:IService_GetSortedStores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetItems" message="tns:IService_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetItemsResponse" message="tns:IService_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSortedItems" message="tns:IService_GetSortedItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSortedItemsResponse" message="tns:IService_GetSortedItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroceries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGroceries" message="tns:IService_GetGroceries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGroceriesResponse" message="tns:IService_GetGroceries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedGroceries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSortedGroceries" message="tns:IService_GetSortedGroceries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSortedGroceriesResponse" message="tns:IService_GetSortedGroceries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceLists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPriceLists" message="tns:IService_GetPriceLists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPriceListsResponse" message="tns:IService_GetPriceLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMostExpensiveItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMostExpensiveItems" message="tns:IService_GetMostExpensiveItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMostExpensiveItemsResponse" message="tns:IService_GetMostExpensiveItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMostInexpensiveItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMostInexpensiveItems" message="tns:IService_GetMostInexpensiveItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMostInexpensiveItemsResponse" message="tns:IService_GetMostInexpensiveItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadItemsToDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoadItemsToDatabase" message="tns:IService_LoadItemsToDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoadItemsToDatabaseResponse" message="tns:IService_LoadItemsToDatabase_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetChains">
+      <soap:operation soapAction="http://tempuri.org/IService/GetChains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedChains">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedChains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <soap:operation soapAction="http://tempuri.org/IService/GetStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedStores">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroceries">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGroceries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedGroceries">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedGroceries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceLists">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPriceLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostExpensiveItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMostExpensiveItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostInexpensiveItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMostInexpensiveItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadItemsToDatabase">
+      <soap:operation soapAction="http://tempuri.org/IService/LoadItemsToDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IService" type="tns:IService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetChains">
+      <soap:operation soapAction="http://tempuri.org/IService/GetChains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedChains">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedChains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <soap:operation soapAction="http://tempuri.org/IService/GetStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedStores">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroceries">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGroceries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedGroceries">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSortedGroceries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceLists">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPriceLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostExpensiveItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMostExpensiveItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostInexpensiveItems">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMostInexpensiveItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadItemsToDatabase">
+      <soap:operation soapAction="http://tempuri.org/IService/LoadItemsToDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IService" type="tns:IService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetChains">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetChains" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedChains">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedChains" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedStores">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroceries">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetGroceries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedGroceries">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedGroceries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceLists">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetPriceLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostExpensiveItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetMostExpensiveItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostInexpensiveItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetMostInexpensiveItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadItemsToDatabase">
+      <soap12:operation soapAction="http://tempuri.org/IService/LoadItemsToDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetNamedPipeBinding_IService" type="tns:IService">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="GetChains">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetChains" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedChains">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedChains" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedStores">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedStores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroceries">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetGroceries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSortedGroceries">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetSortedGroceries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceLists">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetPriceLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostExpensiveItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetMostExpensiveItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMostInexpensiveItems">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetMostInexpensiveItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadItemsToDatabase">
+      <soap12:operation soapAction="http://tempuri.org/IService/LoadItemsToDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:8080/groceryvalue" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IService" binding="tns:BasicHttpsBinding_IService">
+      <soap:address location="https://localhost:8081/groceryvalue" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IService" binding="tns:NetTcpBinding_IService">
+      <soap12:address location="net.tcp://localhost:8082/groceryvalue" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8082/groceryvalue</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Arjestin-Laptop\Arjestin</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetNamedPipeBinding_IService" binding="tns:NetNamedPipeBinding_IService">
+      <soap12:address location="net.pipe://localhost/groceryvalue" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/groceryvalue</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Arjestin-Laptop\Arjestin</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

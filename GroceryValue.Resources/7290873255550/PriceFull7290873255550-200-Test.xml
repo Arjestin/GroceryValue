@@ -1,0 +1,162 @@
+﻿<Root>
+  <XmlDocVersion>19</XmlDocVersion>
+  <ChainId>7290873255550</ChainId>
+  <SubChainId>1</SubChainId>
+  <StoreId>200</StoreId>
+  <BikoretNo>2</BikoretNo>
+  <DllVerNo>9.4.0.21</DllVerNo>
+  <Items Count="8">
+  <Item>
+      <PriceUpdateDate>2015-01-01 00:00:00</PriceUpdateDate>
+      <ItemCode>542157</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>מוצר רוטב סויה מנות</ItemName>
+      <ManufacturerName>י"              ,</ManufacturerName>
+      <ManufactureCountry>לא ידוע</ManufactureCountry>
+      <ManufacturerItemDescription>מוצר רוטב סויה מנות 80 יח בקרטון</ManufacturerItemDescription>
+      <UnitQty>לא ידוע</UnitQty>
+      <Quantity>1.00</Quantity>
+      <UnitOfMeasure>ליטר</UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>999.00</ItemPrice>
+      <UnitOfMeasurePrice>999.0000</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4721</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-01-01 00:00:00</PriceUpdateDate>
+      <ItemCode>640700003194</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>שומשום שחור</ItemName>
+      <ManufacturerName>י"              ,</ManufacturerName>
+      <ManufactureCountry>לא ידוע</ManufactureCountry>
+      <ManufacturerItemDescription>שומשום שחור</ManufacturerItemDescription>
+      <UnitQty>Unknown </UnitQty>
+      <Quantity>0.00</Quantity>
+      <UnitOfMeasure>Unknown </UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>999.00</ItemPrice>
+      <UnitOfMeasurePrice>0.0000</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4723</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-11-27 10:28:13</PriceUpdateDate>
+      <ItemCode>86395096507</ItemCode>
+      <ItemType>1</ItemType>
+      <ItemName>סאקה קלאסי שוציקובאי</ItemName>
+      <ManufacturerName>Takara Sake usa inc.</ManufacturerName>
+      <ManufactureCountry>ארה"ב</ManufactureCountry>
+      <ManufacturerItemDescription>סאקה קלאסי שוציקובאי 180 מ"ל</ManufacturerItemDescription>
+      <UnitQty>לא ידוע</UnitQty>
+      <Quantity>180.00</Quantity>
+      <UnitOfMeasure>100 מ"ל</UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>24.20</ItemPrice>
+      <UnitOfMeasurePrice>0.1344</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4726</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-06-01 08:02:33</PriceUpdateDate>
+      <ItemCode>8936028610315</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>אורז עגול לסושי 1 קג</ItemName>
+      <ManufacturerName>Itochu international</ManufacturerName>
+      <ManufactureCountry>ארצות הברית</ManufactureCountry>
+      <ManufacturerItemDescription>אורז עגול לסושי 1 קג</ManufacturerItemDescription>
+      <UnitQty>לא ידוע</UnitQty>
+      <Quantity>1.00</Quantity>
+      <UnitOfMeasure>יחידה</UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>14.90</ItemPrice>
+      <UnitOfMeasurePrice>14.9000</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4733</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-01-01 00:00:00</PriceUpdateDate>
+      <ItemCode>7290000103815</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>לקט להקפצה בסגנון תא</ItemName>
+      <ManufacturerName>סנפרוסט</ManufacturerName>
+      <ManufactureCountry>ישראל</ManufactureCountry>
+      <ManufacturerItemDescription>לקט להקפצה בסגנון תאילנדי 12 יח 800 גר</ManufacturerItemDescription>
+      <UnitQty>לא ידוע</UnitQty>
+      <Quantity>800.00</Quantity>
+      <UnitOfMeasure>יחידה</UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>24.90</ItemPrice>
+      <UnitOfMeasurePrice>0.0311</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>5140</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-01-01 00:00:00</PriceUpdateDate>
+      <ItemCode>47997123268</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>מגיק תע תבול ירקות</ItemName>
+      <ManufacturerName>Magic Seasonning Ble</ManufacturerName>
+      <ManufactureCountry>ארה"ב</ManufactureCountry>
+      <ManufacturerItemDescription>מגיק לתיבול ירקות Vegetable</ManufacturerItemDescription>
+      <UnitQty>Unknown </UnitQty>
+      <Quantity>0.00</Quantity>
+      <UnitOfMeasure>Unknown </UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>17.90</ItemPrice>
+      <UnitOfMeasurePrice>0.0000</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4748</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-01-01 00:00:00</PriceUpdateDate>
+      <ItemCode>47997123213</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>מגיק תע תבול דגים 64</ItemName>
+      <ManufacturerName>Magic Seasonning Ble</ManufacturerName>
+      <ManufactureCountry>ארה"ב</ManufactureCountry>
+      <ManufacturerItemDescription>מגיק לתיבול מאכלי ים Sea Food</ManufacturerItemDescription>
+      <UnitQty>Unknown </UnitQty>
+      <Quantity>0.00</Quantity>
+      <UnitOfMeasure>Unknown </UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>17.90</ItemPrice>
+      <UnitOfMeasurePrice>0.0000</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4749</ItemId>
+    </Item>
+    <Item>
+      <PriceUpdateDate>2015-01-01 00:00:00</PriceUpdateDate>
+      <ItemCode>47997123169</ItemCode>
+      <ItemType>0</ItemType>
+      <ItemName>מגיק תערובת תבול עוף</ItemName>
+      <ManufacturerName>Magic Seasonning Ble</ManufacturerName>
+      <ManufactureCountry>ארה"ב</ManufactureCountry>
+      <ManufacturerItemDescription>מגיק  תבלין לעוף Poultry</ManufacturerItemDescription>
+      <UnitQty>Unknown </UnitQty>
+      <Quantity>0.00</Quantity>
+      <UnitOfMeasure>Unknown </UnitOfMeasure>
+      <bIsWeighted>0</bIsWeighted>
+      <QtyInPackage>1</QtyInPackage>
+      <ItemPrice>17.90</ItemPrice>
+      <UnitOfMeasurePrice>0.0000</UnitOfMeasurePrice>
+      <AllowDiscount>1</AllowDiscount>
+      <ItemStatus>1</ItemStatus>
+      <ItemId>4750</ItemId>
+    </Item>
+  </Items>
+</Root>
