@@ -1,4 +1,4 @@
-Opened connection at 10/09/2016 20:23:51 +03:00
+Opened connection at 11/09/2016 16:26:24 +03:00
 
 
 SELECT Count(*)
@@ -7,15 +7,15 @@ WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.Chains','dbo.Stores','dbo.Ite
     OR t.TABLE_NAME = 'EdmMetadata'
 
 
--- Executing at 10/09/2016 20:23:51 +03:00
+-- Executing at 11/09/2016 16:26:24 +03:00
 
--- Completed in 1745 ms with result: 3
+-- Completed in 418 ms with result: 3
 
 
 
-Closed connection at 10/09/2016 20:23:53 +03:00
+Closed connection at 11/09/2016 16:26:24 +03:00
 
-Opened connection at 10/09/2016 20:23:53 +03:00
+Opened connection at 11/09/2016 16:26:24 +03:00
 
 SELECT 
     [GroupBy1].[A1] AS [C1]
@@ -28,15 +28,15 @@ SELECT
 
 -- p__linq__0: 'GroceryValue.Library.Context' (Type = String, Size = 4000)
 
--- Executing at 10/09/2016 20:23:53 +03:00
+-- Executing at 11/09/2016 16:26:24 +03:00
 
--- Completed in 276 ms with result: SqlDataReader
+-- Completed in 88 ms with result: SqlDataReader
 
 
 
-Closed connection at 10/09/2016 20:23:53 +03:00
+Closed connection at 11/09/2016 16:26:24 +03:00
 
-Opened connection at 10/09/2016 20:23:53 +03:00
+Opened connection at 11/09/2016 16:26:24 +03:00
 
 SELECT TOP (1) 
     [Project1].[C1] AS [C1], 
@@ -56,11 +56,11 @@ SELECT TOP (1)
 
 -- p__linq__0: 'GroceryValue.Library.Context' (Type = String, Size = 4000)
 
--- Executing at 10/09/2016 20:23:53 +03:00
+-- Executing at 11/09/2016 16:26:24 +03:00
 
--- Completed in 2 ms with result: SqlDataReader
+-- Completed in 14 ms with result: SqlDataReader
 
 
 
-Closed connection at 10/09/2016 20:23:54 +03:00
+Closed connection at 11/09/2016 16:26:24 +03:00
 

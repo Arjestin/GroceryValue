@@ -409,15 +409,14 @@ namespace GroceryValue.Client
                 var comparisonRows = _selectedGroceries.Zip(priceLists, (grocery, prices) => new {Grocery = grocery, Prices = prices});
                 foreach (var comparisonRow in comparisonRows)
                 {
-                    var i = 0;
                     var dataRow = comparisonTable.NewRow();
-                    dataRow[i++] = comparisonRow.Grocery.Quantity;
-                    dataRow[i++] = comparisonRow.Grocery.Name;
-                    foreach (var price in comparisonRow.Prices)
+                    dataRow[0] = comparisonRow.Grocery.Quantity;
+                    dataRow[1] = comparisonRow.Grocery.Name;
+                    for (var i = 0; i < comparisonRow.Prices.Count; ++i)
                     {
-                        var totalPrice = price*comparisonRow.Grocery.Quantity;
-                        dataRow[i++] = $"{totalPrice:C2}";
-                        totalPrices[comparisonRow.Prices.IndexOf(price)] += totalPrice;
+                        var totalPrice = comparisonRow.Prices[i]*comparisonRow.Grocery.Quantity;
+                        dataRow[i + 2] = $"{totalPrice:C2}";
+                        totalPrices[i] += totalPrice;
                     }
                     comparisonTable.Rows.Add(dataRow);
                 }
