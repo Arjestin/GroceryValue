@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 namespace GroceryValue.Library
 {
+    //Very clean and good design!
     [DataContract]
     public class Chain
     {

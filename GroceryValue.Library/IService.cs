@@ -4,6 +4,19 @@ using System.Threading.Tasks;
 
 namespace GroceryValue.Library
 {
+    /*
+     * Seems like this interface, and whichever class implements it, will have a lot of different type of work on its hands
+     * It will create a code base which hard to maintain and debug.
+     
+        Other than that - well done and well designed.
+
+     Consider:
+     a) https://en.wikipedia.org/wiki/Interface_segregation_principle
+     b) https://en.wikipedia.org/wiki/Single_responsibility_principle
+     c) https://en.wikipedia.org/wiki/Microservices
+     d) https://en.wikipedia.org/wiki/Separation_of_concerns
+     
+         */
     [ServiceContract]
     public interface IService
     {

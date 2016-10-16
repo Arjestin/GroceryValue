@@ -7,6 +7,12 @@ namespace GroceryValue.Library
     {
         protected override void Seed(Context context)
         {
+            /*
+             * The following line of code could cause a dealock
+             * Solution: Task.Run(async () => { await SeedAsync(context); }).Wait();
+             * Consider: https://msdn.microsoft.com/en-us/magazine/jj991977.aspx
+            */
+
             SeedAsync(context).Wait();
             base.Seed(context);
         }

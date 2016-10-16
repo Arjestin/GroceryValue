@@ -2,6 +2,7 @@
 
 namespace GroceryValue.Library
 {
+    //Very clean and good design!
     public class Manufacturer
     {
         public string Name { get; set; }

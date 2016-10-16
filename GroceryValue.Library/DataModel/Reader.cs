@@ -7,6 +7,11 @@ using System.Xml.XPath;
 
 namespace GroceryValue.Library
 {
+    /*
+        What you did here is create a separation between the import process and the application data consumption
+        Very, very good!
+
+    */
     public static class Reader
     {
         public static IEnumerable<Chain> ReadChains()
